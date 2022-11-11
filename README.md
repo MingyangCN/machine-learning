@@ -8,21 +8,21 @@ Implementation of some machine learning algorithms
 
 ## Regression
 ### linear regression
-| algorithm | detials | related materials |
+| algorithm | details | related materials |
 |:---:|:---:|:---:|
 | linear regression base |
 
 
 ## Classification
 #### methods
-| algorithm | detials | related materials |
+| algorithm | details | related materials |
 |:---:|:---:|:---:|
 | Logistic regression base |
 
 
 
 ## Tree
-| algorithm | detials | related materials |
+| algorithm | details | related materials |
 |:---:|:---:|:---:|
 | decision tree |
 
