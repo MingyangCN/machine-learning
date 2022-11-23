@@ -27,16 +27,10 @@ Implementation of some machine learning algorithms
 |    logistic regression gradient ascent    |   11/21:基于梯度上升   |                                                                                         |
 | logistic regression stoch gradient ascent | 11/21:基于随机梯度上升 |                                                                                         |
 
-## neural networks
-
-| algorithm  | details | materials |
-| :--------: | :-----: | :-------: |
-| 单层感知机 |   11/22      |           |
-| 多层感知机 |  msgd   |
-|            | 牛顿法  |
-|            | 动量法  |
-|            | AdaGrad |
-|            |  Adam   |
+## Bayes
+|   algorithm   | details | related materials |
+| :-----------: | :-----: | :---------------: |
+| navies Bayes | | [知乎](https://zhuanlan.zhihu.com/p/518617685)(阅读时间-4h) |
 
 ## Tree
 
@@ -61,6 +55,17 @@ Implementation of some machine learning algorithms
 | kernal PCA |   优化高维空间到低维空间的函数映射<br />从线性到非线性映射 4   |                                                            PCA                                                             | [kernel PCA](https://blog.csdn.net/ljzology/article/details/81347899) |
 |    SVD     |                           奇异值分解                           |      [奇异值](https://zhuanlan.zhihu.com/p/69069183) <br /> [奇异值分解-知乎](https://zhuanlan.zhihu.com/p/29846048)       |
 |    LDA     |
+
+## neural networks
+
+| algorithm  | details | materials |
+| :--------: | :-----: | :-------: |
+| 单层感知机 |   11/22      |           |
+| 多层感知机 |  msgd   |
+|            | 牛顿法  |
+|            | 动量法  |
+|            | AdaGrad |
+|            |  Adam   |
 
 ## reference
 
