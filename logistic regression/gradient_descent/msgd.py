@@ -6,7 +6,7 @@ from gd import LogisticRegressionClassifer as BaseLogistic
 
 
 class LogisticRegressionClassifer(BaseLogistic):
-    def mini_batch_gradient_descent(self, X, y, learning_rate=0.01, epochs=1000, batch_size=16, shuffle=True):
+    def mini_batch_gradient_descent(self, X, y, learning_rate=0.001, epochs=1000, batch_size=16, shuffle=True):
         """
             mini batch stoch gradient ascent
             z = X*W     shape: (m, n)*(n, 1) = (m, 1)
@@ -29,7 +29,7 @@ class LogisticRegressionClassifer(BaseLogistic):
                 data, label = X[idx], y[idx]
                 y_hat = self.sigmoid(data * W)
                 error = y_hat - label
-                W -= (1/m) * learning_rate * data.T * error
+                W -= learning_rate * data.T * error
                 cost.append(W.T.tolist()[0])
 
         end = time.time()
@@ -41,10 +41,12 @@ class LogisticRegressionClassifer(BaseLogistic):
 if __name__ == "__main__":
     data_file = "test.txt"
     file_name = "./snapshots_bsgd"
+    lr = 0.001
+    epochs = 1000
 
     log_reg = LogisticRegressionClassifer()
     dataset, labels = load_data_logistic(data_file)
-    W, cost = log_reg.mini_batch_gradient_descent(dataset, labels)
+    W, cost = log_reg.mini_batch_gradient_descent(dataset, labels, learning_rate=lr, epochs=epochs)
     m, n = cost.shape
 
     # show data
@@ -60,12 +62,4 @@ if __name__ == "__main__":
         ax.plot(cost[:, i], label=label)
         ax.legend()
 
-    fig.savefig('W_log_msgd.png')
-
-
-
-
-
-
-
-
+    fig.savefig(f'{file_name}/W_log_msgd.png')
