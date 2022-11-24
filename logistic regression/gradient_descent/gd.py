@@ -63,7 +63,7 @@ class LogisticRegressionClassifer(object):
             cost.append(W.reshape(1, -1).tolist()[0])  # reshape(1, -1) 转化成1行
 
         end = time.time()
-        print(f"gd:epoch={epochs}, learning_rate={learning_rate}, 消耗的时间是：{end-start}")
+        print(f"gradient descent: epoch={epochs}, learning_rate={learning_rate}, 消耗的时间是：{end-start}")
         self.W = W
         return W, np.array(cost)
 
@@ -116,14 +116,16 @@ def snapshot(W, dataset, labels, file_name, picture_name):
 if __name__ == "__main__":
     data_file = "test.txt"
     file_name = "./snapshots_bgd"
+    lr = 0.001
+    epochs = 10000
 
     log_reg = LogisticRegressionClassifer()
     X, y = load_data_logistic(data_file)
-    W, cost = log_reg.gradient_descent(X, y)
+    W, cost = log_reg.gradient_descent(X, y, learning_rate=lr, epochs=epochs)
     m, n = X.shape
 
-    for i in range(600):
-        if i % (50) == 0:
+    for i in range(epochs):
+        if i % (100) == 0:
             print('bgd_{}.png saved'.format(i))
             snapshot(cost[i].tolist(), X, y, file_name,'bgd_{}.png'.format(i))
 
@@ -134,4 +136,4 @@ if __name__ == "__main__":
         ax.plot(cost[:, i], label=label)
         ax.legend()
 
-    fig.savefig('W_log_bgd.png')
+    fig.savefig(f'{file_name}/W_log_bgd.png')
