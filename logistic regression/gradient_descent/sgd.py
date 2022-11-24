@@ -5,13 +5,12 @@ from gd import LogisticRegressionClassifer as BaseLogistic
 
 
 class LogisticRegressionClassifer(BaseLogistic):
-    def stoch_gradient_ascent(self, X, y, learning_rate=0.01, epochs=1000):
+    def stoch_gradient_ascent(self, X, y, learning_rate=0.001, epochs=10000, batchsize=1):
         """
             stoch gradient ascent
             z = X*W     shape: (m, n)*(n, 1) = (m, 1)
         """
         X = np.matrix(X)   # (100, 3)
-        # y = np.matrix(y)   # (1, 100)
         m, n = X.shape
 
         W = np.matrix(np.random.normal(size=(n, 1)))
@@ -22,13 +21,14 @@ class LogisticRegressionClassifer(BaseLogistic):
             # Randomly selected samples, batchsize = 1
             data_indices = list(range(m))
             random.shuffle(data_indices)
+            data_indices = data_indices[:batchsize]
 
             for j, idx in enumerate(data_indices):
                 data, label = X[idx], y[idx]
                 y_hat = self.sigmoid(data * W)
                 error = y_hat - label
                 # 梯度下降
-                W -= (1/m) * learning_rate * data.T * error
+                W -= learning_rate * data.T * error
                 cost.append(W.T.tolist()[0])
 
         end = time.time()
@@ -40,10 +40,12 @@ class LogisticRegressionClassifer(BaseLogistic):
 if __name__ == "__main__":
     data_file = "test.txt"
     file_name = "./snapshots_sgd"
+    lr = 0.001
+    epochs = 1000
 
     clf = LogisticRegressionClassifer()
     dataset, labels = load_data_logistic(data_file)
-    W, cost = clf.stoch_gradient_ascent(dataset, labels)
+    W, cost = clf.stoch_gradient_ascent(dataset, labels, learning_rate=lr, epochs=epochs)
     m, n = cost.shape
 
     # show data
@@ -59,4 +61,4 @@ if __name__ == "__main__":
         ax.plot(cost[:, i], label=label)
         ax.legend()
 
-    fig.savefig('W_log_sgd.png')
+    fig.savefig(f'{file_name}/W_log_sgd.png')
