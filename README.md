@@ -8,11 +8,6 @@ Implementation of some machine learning algorithms
 
 ---
 
-`Method`
-
-- Regression
-- Classification
-
 ## linear regression
 
 |       algorithm        | details | materials |
@@ -21,22 +16,24 @@ Implementation of some machine learning algorithms
 
 ## logistic regression
 
-|                 algorithm                 |     details      |                                        materials                                        |
-| :---------------------------------------: | :--------------: | :-------------------------------------------------------------------------------------: |
-|         logistic regression base          |      11/20            | [bilibili-文小刀](https://www.bilibili.com/video/BV17s411j7s1/?spm_id_from=333.999.0.0) |
+|                 algorithm                 |        details         |                                        materials                                        |
+| :---------------------------------------: | :--------------------: | :-------------------------------------------------------------------------------------: |
+|         logistic regression base          |         11/20          | [bilibili-文小刀](https://www.bilibili.com/video/BV17s411j7s1/?spm_id_from=333.999.0.0) |
 |    logistic regression gradient ascent    |   11/21:基于梯度上升   |                                                                                         |
 | logistic regression stoch gradient ascent | 11/21:基于随机梯度上升 |                                                                                         |
 
 ## Bayes
-|   algorithm   | details | related materials |
-| :-----------: | :-----: | :---------------: |
-| navies Bayes | | [知乎](https://zhuanlan.zhihu.com/p/518617685)(阅读时间-4h) |
+
+|  algorithm   |               details                |                                                    related materials                                                     |
+| :----------: | :----------------------------------: | :----------------------------------------------------------------------------------------------------------------------: |
+| navies Bayes | 极大似然估计(MLE)、最大后验概率(MAP) | [知乎](https://zhuanlan.zhihu.com/p/518617685) <br /> [csdn](https://blog.csdn.net/qq_25948717/article/details/81744277) |
 
 ## Tree
 
 |   algorithm   | details | related materials |
 | :-----------: | :-----: | :---------------: |
 | decision tree |         |                   |
+|    KD tree    |         |                   |
 
 ## Ensemble learning
 
@@ -56,11 +53,17 @@ Implementation of some machine learning algorithms
 |    SVD     |                           奇异值分解                           |      [奇异值](https://zhuanlan.zhihu.com/p/69069183) <br /> [奇异值分解-知乎](https://zhuanlan.zhihu.com/p/29846048)       |
 |    LDA     |
 
+## support vector machine
+
+| algorithm | details | related materials |
+| :-------: | :-----: | :---------------: |
+|    svm    |
+
 ## neural networks
 
 | algorithm  | details | materials |
 | :--------: | :-----: | :-------: |
-| 单层感知机 |   11/22      |           |
+| 单层感知机 |  11/22  |           |
 | 多层感知机 |  msgd   |
 |            | 牛顿法  |
 |            | 动量法  |
